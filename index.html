@@ -851,9 +851,9 @@ tbody td { padding:11px 12px; color:var(--text); font-size:13px; }
   <!-- ── APP ── -->
   <script>
 // ── LEAD GATE ──────────────────────────────────────────────────────────────
-// Configurar a URL do webhook para receber os leads (ex: Zapier, Make, n8n)
-// Deixe vazio para só salvar localmente e liberar acesso.
-const GATE_WEBHOOK_URL = '';
+// Envia para /api/lead (Vercel Function → Attio)
+// Em preview local (file://) salva só no localStorage — sem chamada de API
+const GATE_API = '/api/lead';
 
 const FREE_DOMAINS = ['gmail','hotmail','yahoo','outlook','icloud','bol','uol','live','terra'];
 const GATE_KEY     = 'sinky_relatorio_lead';
@@ -922,19 +922,19 @@ function gateInit() {
 
     const payload = { nome, email, empresa, cargo, segmento, ts: new Date().toISOString(), fonte: 'relatorio-inadimplencia-b2b-2025' };
 
-    // Salva localmente
+    // Salva localmente (funciona sempre, inclusive em file://)
     localStorage.setItem(GATE_KEY, JSON.stringify({ ...payload, ts: Date.now() }));
 
-    // Envia para webhook (não bloqueia se falhar)
-    if (GATE_WEBHOOK_URL) {
+    // Envia para Attio via Vercel Function (só funciona no servidor)
+    // Em file:// falha silenciosamente — lead já está no localStorage
+    if (location.protocol !== 'file:') {
       try {
-        await fetch(GATE_WEBHOOK_URL, {
+        await fetch(GATE_API, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
-          mode: 'no-cors'
         });
-      } catch (_) { /* webhook fail silencioso — lead já está no localStorage */ }
+      } catch (_) { /* falha silenciosa — lead salvo no localStorage */ }
     }
 
     gateRelease();

@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "titulo": "Relatório de Inadimplência B2B no Brasil",
+    "subtitulo": "Dados consolidados de fontes públicas — atualizado mensalmente",
+    "ultima_atualizacao": "2025-05",
+    "ultima_atualizacao_label": "Maio 2025",
+    "proxima_atualizacao": "2025-06",
+    "metodologia": "Agregação mensal de dados públicos do BACEN, Serasa Experian, SPC Brasil, Boa Vista e Receita Federal. Os índices setoriais são estimativas baseadas em dados de negativações B2B por CNAE.",
+    "fontes": [
+      { "nome": "Serasa Experian", "url": "https://www.serasaexperian.com.br", "dado": "Indicador de Inadimplência PJ" },
+      { "nome": "BACEN", "url": "https://www.bcb.gov.br", "dado": "Nota de Crédito — Modalidades PJ" },
+      { "nome": "SPC Brasil", "url": "https://www.spcbrasil.org.br", "dado": "Indicadores de Inadimplência" },
+      { "nome": "Boa Vista", "url": "https://www.boavistaservicos.com.br", "dado": "ICPF — Índice de Comportamento de Pagamento Futuro" },
+      { "nome": "Receita Federal", "url": "https://www.gov.br/receitafederal", "dado": "CNPJ ativos e inativos" }
+    ]
+  },
+
+  "nacional": {
+    "taxa_inadimplencia_pct": 22.7,
+    "variacao_mensal_pp": 0.3,
+    "variacao_anual_pp": 2.1,
+    "empresas_inadimplentes": 6800000,
+    "empresas_inadimplentes_label": "6,8 milhões",
+    "valor_dividas_bilhoes": 150.4,
+    "valor_dividas_label": "R$ 150,4 bi",
+    "ticket_medio_divida": 22100,
+    "ticket_medio_label": "R$ 22.100",
+    "prazo_medio_atraso_dias": 94
+  },
+
+  "por_setor": [
+    { "setor": "Construção Civil", "taxa": 28.4, "variacao_anual": 3.2, "risco": "alto" },
+    { "setor": "Comércio Varejista", "taxa": 25.1, "variacao_anual": 1.8, "risco": "alto" },
+    { "setor": "Transporte e Logística", "taxa": 23.6, "variacao_anual": 2.4, "risco": "alto" },
+    { "setor": "Distribuição Alimentícia", "taxa": 19.3, "variacao_anual": 0.9, "risco": "medio" },
+    { "setor": "Insumos Industriais", "taxa": 21.7, "variacao_anual": 1.6, "risco": "medio" },
+    { "setor": "Agronegócio B2B", "taxa": 14.2, "variacao_anual": -0.3, "risco": "baixo" },
+    { "setor": "Autopeças e Maquinário", "taxa": 20.8, "variacao_anual": 1.1, "risco": "medio" },
+    { "setor": "Químicos e Farmacêutico", "taxa": 16.5, "variacao_anual": 0.4, "risco": "baixo" }
+  ],
+
+  "por_porte": [
+    { "porte": "MEI", "taxa": 31.2, "variacao_anual": 4.1 },
+    { "porte": "Micro empresa", "taxa": 26.8, "variacao_anual": 2.9 },
+    { "porte": "Pequena empresa", "taxa": 20.4, "variacao_anual": 1.7 },
+    { "porte": "Média empresa", "taxa": 13.1, "variacao_anual": 0.8 },
+    { "porte": "Grande empresa", "taxa": 6.2, "variacao_anual": -0.2 }
+  ],
+
+  "historico": [
+    { "mes": "2024-05", "label": "Mai/24", "taxa": 20.6 },
+    { "mes": "2024-06", "label": "Jun/24", "taxa": 20.9 },
+    { "mes": "2024-07", "label": "Jul/24", "taxa": 21.0 },
+    { "mes": "2024-08", "label": "Ago/24", "taxa": 21.4 },
+    { "mes": "2024-09", "label": "Set/24", "taxa": 21.8 },
+    { "mes": "2024-10", "label": "Out/24", "taxa": 22.0 },
+    { "mes": "2024-11", "label": "Nov/24", "taxa": 21.6 },
+    { "mes": "2024-12", "label": "Dez/24", "taxa": 21.2 },
+    { "mes": "2025-01", "label": "Jan/25", "taxa": 21.8 },
+    { "mes": "2025-02", "label": "Fev/25", "taxa": 22.1 },
+    { "mes": "2025-03", "label": "Mar/25", "taxa": 22.4 },
+    { "mes": "2025-04", "label": "Abr/25", "taxa": 22.4 },
+    { "mes": "2025-05", "label": "Mai/25", "taxa": 22.7 }
+  ],
+
+  "destaques": [
+    {
+      "icone": "trend-up",
+      "valor": "+2,1 p.p.",
+      "descricao": "Aumento na taxa nacional de inadimplência B2B nos últimos 12 meses"
+    },
+    {
+      "icone": "building",
+      "valor": "28,4%",
+      "descricao": "Taxa de inadimplência na Construção Civil — setor com maior índice em 2025"
+    },
+    {
+      "icone": "calendar",
+      "valor": "94 dias",
+      "descricao": "Prazo médio de atraso antes da negativação formal em carteiras B2B"
+    },
+    {
+      "icone": "money",
+      "valor": "R$ 150,4 bi",
+      "descricao": "Volume total de dívidas B2B em aberto no Brasil — Maio 2025"
+    }
+  ]
+}

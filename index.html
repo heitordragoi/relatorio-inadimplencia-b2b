@@ -1199,8 +1199,6 @@ function renderTable() {
     ).join('') + '</tbody></table>';
 }
 
-loadData().then(d => { data = d; init(); });
-
 // ── Animated counters ──
 function animateCounter(el) {
   const target = parseFloat(el.dataset.counter);
